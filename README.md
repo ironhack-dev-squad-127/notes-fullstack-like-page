@@ -1,5 +1,9 @@
 # Fullstack Like Page
 
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/5306791/57225008-fb4ec600-7002-11e9-93e9-f295be9409cd.png)
+
 ## Set-up
 ```sh
 $ mkdir fullstack-like-page
