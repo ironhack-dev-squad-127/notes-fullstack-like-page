@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const bodyParser   = require('body-parser');
+const cors = require('cors')
 const cookieParser = require('cookie-parser');
 const express      = require('express');
 const mongoose     = require('mongoose');
@@ -20,6 +21,14 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+app.use(cors({
+  origin: (origin, cb) => {
+    cb(null, origin && origin.startsWith('http://localhost:'))
+  },
+  optionsSuccessStatus: 200,
+  credentials: true
+}))
 
 // Middleware Setup
 app.use(logger('dev'));
